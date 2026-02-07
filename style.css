@@ -53,7 +53,7 @@ body {
 
 .navbar-links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
@@ -219,6 +219,7 @@ body {
     width: 100%;
     height: 80vh;
     overflow: hidden;
+    border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
@@ -226,7 +227,280 @@ body {
     display: flex;
     height: 100%;
     transition: transform 0.6s ease-in-out;
-    background-color: #0f172a;
+    border-radius: 6px;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 5px;
+}
+
+/* ===== Courses Bar ===== */
+.courses-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #1e88e5;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    padding-left: 10px;
+}
+
+.course-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.courses-scroll {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollCourses 30s linear infinite;
+    gap: 50px;
+}
+
+.courses-scroll span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@keyframes scrollCourses {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ===== Main  desk ===== */
+/* ===== Reset ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Navbar ===== */
+
+/* ============================= */
+/* 🔥 RESPONSIVE NAVBAR FIX */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 12px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .navbar a {
+    font-size: 12px;
+    padding: 4px 6px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    width: 100%;
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+}
+.navbar-container {
+  background-color: rgb(99, 38, 38);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+}
+
+/* ============================= */
+/* 🔥 COLLEGE HEADER RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .college-header {
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .college-header img {
+    max-width: 120px;
+  }
+
+  #home {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .college-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h1 {
+    font-size: 22px;
+  }
+
+  #home {
+    flex-direction: column;
+    font-size: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.navbar {
+    height: 30px;
+    width: 100%;
+    background-color: rgb(99, 38, 38);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding:15px
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* ===== College Header ===== */
+.college-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 30px;
+}
+
+.h1 {
+    color: green;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.h1:hover {
+    color: red;
+}
+
+#home {
+    display: flex;
+    gap: 15px;
+    color: rgb(107, 103, 103);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* ===== Button ===== */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #ffca28, #f9a825);
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #f9a825, #ffb300);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== Slider ===== */
+.slider {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
 }
 
 .slides img {
@@ -234,7 +508,7 @@ body {
     height: 100%;
     object-fit: contain;
     flex-shrink: 0;
-    /* background-color: #8a6161; */
+    background-color: #000;
 }
 
 /* ===== Courses Bar ===== */
@@ -273,6 +547,7 @@ body {
 }
 
 /* ===== Maindesk ===== */
+
 #maindiv{
     display: flex;
     gap: 15px;
@@ -458,24 +733,67 @@ body {
     #griddiv { grid-template-columns: 1fr; }
 }
 
+/* ============================= */
+/* 🔥 MOBILE FIX - TINO SECTION NICHE STACK */
+@media (max-width: 768px){
+    #maindiv{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        overflow-x: hidden;
+    }
 
+    .maindesk{
+        padding-left: 0;
+        justify-content: center;
+        width: 100%;
+    }
 
+    .imagediv{
+        width: 100%;
+        max-width: 320px;
+    }
 
-  /* ========================= */
+    .imagedesk{
+        width: 100%;
+    }
 
-  /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    .spantag{
+        width: 100%;
+    }
+
+    #griddiv{
+        width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .notice-box{
+        width: 100%;
+        max-width: 320px;
+        margin: 20px auto;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
 }
 
-body {
-    background-color: #f0f2f5;
-    color: #333;
-    padding: 40px 20px;
+@media (max-width: 480px){
+    .imagediv,
+    .notice-box{
+        max-width: 100%;
+    }
+
+    #griddiv{
+        border-radius: 12px;
+    }
 }
+
+  /* ========   part 444444================= */
+
+
 
 .container {
     max-width: 1200px;
