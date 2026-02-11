@@ -11,6 +11,7 @@ import Finance from "./pages/Finance";
 import UnathorizedPage from "./pages/Unathorized";
 import Navbar from "./components/Navbar";
 
+
 const App = () => {
   return (
     <AuthProvider>
