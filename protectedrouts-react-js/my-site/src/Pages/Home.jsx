@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
+import { FaAward, FaBriefcase, FaChalkboardTeacher, FaFlask, FaGlobe, FaHandshake, FaMoneyBillWave, FaUserGraduate } from "react-icons/fa";
 
 const Home = () => {
   const { user } = useAuth();
@@ -26,13 +27,13 @@ const Home = () => {
 
   const heroSlides = [
     {
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkzZykYl_5tDYBelrwQrn57pz-hmDg-S2LbA&s",
       title: "Welcome to Sunrise University",
       subtitle: "Shaping Tomorrow's Leaders Since 1985",
       cta: "Explore Programs"
     },
     {
-      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDbtI3g1DwVMhjDYl5roXSB5ZcM2HzJCOJw&s",
       title: "World-Class Education",
       subtitle: "Join 15,000+ Students in Their Journey to Excellence",
       cta: "Apply Now"
@@ -135,7 +136,7 @@ const Home = () => {
     },
     {
       title: "Innovation Labs",
-      image: "https://images.unsplash.com/photo-1581093458791-9f3c3250a529?w=500",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH5axVLt5pYSIWjmiIT5XArHsKT_AfXpm0_g&s",
       description: "State-of-the-art labs for AI, Robotics, IoT, and emerging technologies"
     },
     {
@@ -145,16 +146,53 @@ const Home = () => {
     }
   ];
 
-  const achievements = [
-    { number: "15,000+", label: "Students Enrolled", icon: "👨‍🎓" },
-    { number: "850+", label: "Expert Faculty", icon: "👨‍🏫" },
-    { number: "180+", label: "Research Labs", icon: "🔬" },
-    { number: "95%", label: "Placement Rate", icon: "💼" },
-    { number: "500+", label: "Corporate Partners", icon: "🤝" },
-    { number: "50+", label: "Countries (Students)", icon: "🌍" },
-    { number: "₹12 LPA", label: "Avg. Package", icon: "💰" },
-    { number: "A+", label: "NAAC Grade", icon: "🏆" }
-  ];
+const achievements = [
+  { number: "15,000+", label: "Students Enrolled", icon: <FaUserGraduate /> },
+  { number: "850+", label: "Expert Faculty", icon: <FaChalkboardTeacher /> },
+  { number: "180+", label: "Advanced Research Labs", icon: <FaFlask /> },
+  { number: "95%", label: "Successful Placement Rate", icon: <FaBriefcase /> },
+  { number: "500+", label: "Corporate Collaborations", icon: <FaHandshake /> },
+  { number: "50+", label: "International Students", icon: <FaGlobe /> },
+  { number: "₹12 LPA", label: "Average Salary Package", icon: <FaMoneyBillWave /> },
+  { number: "A+", label: "Accreditation Grade (NAAC)", icon: <FaAward /> },
+];
+
+const AchievementsSection = () => {
+  return (
+    <section className="bg-gray-50 py-20 px-6">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          Our Achievements & Impact
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-14">
+          Empowering students with world-class education, cutting-edge research
+          facilities, and exceptional career opportunities across the globe.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {achievements.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-8 border border-gray-100"
+            >
+              <div className="text-4xl text-indigo-600 mb-4 flex justify-center">
+                {item.icon}
+              </div>
+              <h3 className="text-3xl font-bold text-gray-800">
+                {item.number}
+              </h3>
+              <p className="text-gray-600 mt-2 text-sm tracking-wide">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
 
   const studentTestimonials = [
     {
@@ -230,7 +268,7 @@ const Home = () => {
     },
     {
       title: "International Exchange",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYLHI3xvEJTxZgpd5l3zWGKR6UV9XEtggxg&s",
       description: "Semester exchange programs with partner universities in 15+ countries"
     },
     {
@@ -244,11 +282,11 @@ const Home = () => {
     { company: "Google", logo: "https://img.icons8.com/color/96/google-logo.png", offers: 45 },
     { company: "Microsoft", logo: "https://img.icons8.com/color/96/microsoft.png", offers: 38 },
     { company: "Amazon", logo: "https://img.icons8.com/color/96/amazon.png", offers: 52 },
-    { company: "Flipkart", logo: "https://img.icons8.com/color/96/flipkart.png", offers: 41 },
-    { company: "TCS", logo: "https://img.icons8.com/color/96/tata.png", offers: 180 },
-    { company: "Infosys", logo: "https://img.icons8.com/color/96/infosys.png", offers: 165 },
-    { company: "Wipro", logo: "https://img.icons8.com/color/96/wipro.png", offers: 142 },
-    { company: "Deloitte", logo: "https://img.icons8.com/color/96/deloitte.png", offers: 56 }
+    { company: "Flipkart", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRmoLzF1FA_rPgBLwohs989O_z-b6YCETUmg&s", offers: 41 },
+    { company: "TCS", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA8TQKxL72sCK0GkFQawK2atAvDUIGmfU6wQ&s", offers: 180 },
+    { company: "Infosys", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_s2yZEHoZxy6N-3YQ5cQHQYBA92d5Tw-K-Q&s", offers: 165 },
+    { company: "Wipro", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa2hghjo2D36tw5W3V1vIMIH7dvxAm8MfPGA&s", offers: 142 },
+    { company: "Deloitte", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4RuqnC3RdlZp_FPnw_8zOYjaK0BudXABOlA&s", offers: 56 }
   ];
 
   const programs = {
@@ -431,12 +469,12 @@ const Home = () => {
                 className="rounded-xl shadow-lg h-64 object-cover"
               />
               <img
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmBc1HWHdpEgUTLVXwZGR_D7f3_Pp9WWQLFg&s"
                 alt="Students"
                 className="rounded-xl shadow-lg h-64 object-cover mt-8"
               />
               <img
-                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKiT7Z8FEKJAKga4IIzoi4Gp0ce7JaH056jA&s"
                 alt="Library"
                 className="rounded-xl shadow-lg h-64 object-cover -mt-8"
               />
@@ -665,6 +703,7 @@ const Home = () => {
           </div>
 
           {/* Top Recruiters */}
+
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Top Recruiters</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
@@ -767,6 +806,12 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* contect us ka page */}
+
+      
+
+
 
       {/* Application CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
