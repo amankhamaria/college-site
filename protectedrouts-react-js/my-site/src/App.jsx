@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router";
 import ProtectedPage from "./pages/ProtectedPage";
 import AuthorizedPage from "./pages/AuthorizedPage";
-import Login from "./pages/Login";
 import Home from "./pages/Home";
 import PublicRoutes from "./components/PublicRoutes";
 import ProtectedRoutes from "./components/ProtectedRoutes";
@@ -10,6 +9,7 @@ import { AuthProvider } from "./context/AuthContext";
 import Finance from "./pages/Finance";
 import UnathorizedPage from "./pages/Unathorized";
 import Navbar from "./components/Navbar";
+import Login from "./Pages/Login";
 
 
 const App = () => {
