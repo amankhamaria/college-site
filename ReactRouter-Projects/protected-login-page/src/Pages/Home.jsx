@@ -1,9 +1,9 @@
-import React from 'react'
-
-const Home = () => {
+function Home() {
   return (
-    <div>Home</div>
-  )
+    <div className="text-3xl font-bold text-center mt-20">
+      Home Page
+    </div>
+  );
 }
 
-export default Home
+export default Home;

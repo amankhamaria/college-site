@@ -1,9 +1,9 @@
-function Login() {
+function About() {
   return (
     <div className="text-3xl font-bold text-center mt-20">
-      Login Page
+      About Page
     </div>
   );
 }
 
-export default Login;
+export default About;
